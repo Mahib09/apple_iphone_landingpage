@@ -19,6 +19,12 @@ const VideoCarousel = () => {
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
 
   useGSAP(() => {
+    gsap.to("#slider", {
+      transform: `translateX(${-100 * videoId})%}`,
+      duration: 2,
+      ease: "power2.inOut",
+    });
+
     gsap.to(`#video-${videoId}`, {
       scrollTrigger: {
         trigger: `#video-${videoId}`,
@@ -49,13 +55,56 @@ const VideoCarousel = () => {
   };
 
   useEffect(() => {
-    let span = videoSpanRef.current[videoId];
+    let currentProgress = 0;
+    let span = videoSpanRef.current;
+    if (span[videoId]) {
+      let animation = gsap.to(span[videoId], {
+        onUpdate: () => {
+          const progress = Math.ceil(animation.progress() * 100);
 
-    if (span) {
-      gsap.to(span, {
-        onUpdate: () => {},
-        onComplete: () => {},
+          if (progress != currentProgress) {
+            currentProgress = progress;
+          }
+          gsap.to(videoDivRef.current[videoId], {
+            width:
+              window.innerWidth < 760
+                ? "10vw"
+                : window.innerWidth < 1200
+                ? "10vw"
+                : "4vw",
+          });
+
+          gsap.to(span[videoId], {
+            width: `${currentProgress}%`,
+            backgroundColor: "white",
+          });
+        },
+        onComplete: () => {
+          if (isPlaying) {
+            gsap.to(videoDivRef.current[videoId], {
+              width: "12px",
+            });
+            gsap.to(span[videoId], {
+              backgroundColor: "#afafaf",
+            });
+          }
+        },
       });
+      if (videoId === 0) {
+        animation.restart();
+      }
+      const animationUpdate = () => {
+        animation.progress(
+          videoRef.current[videoId].currentTime /
+            hightlightsSlides[videoId].videoDuration
+        );
+      };
+
+      if (isPlaying) {
+        gsap.ticker.add(animationUpdate);
+      } else {
+        gsap.ticker.remove(animationUpdate);
+      }
     }
   }, [videoId, startPlay]);
 
@@ -99,6 +148,11 @@ const VideoCarousel = () => {
                   preload="auto"
                   muted
                   ref={(el) => (videoRef.current[i] = el)}
+                  onEnded={() =>
+                    i !== 3
+                      ? handleProcess("video-end", i)
+                      : handleProcess("video-last")
+                  }
                   onPlay={() => {
                     setVideo((prevVideo) => ({
                       ...prevVideo,
