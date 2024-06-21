@@ -4,7 +4,7 @@ const MoreBtn = (props) => {
   return (
     <div
       id="more"
-      className="flex items-center gap-4 bg-gray-300 p-2 rounded-full w-fit m-auto mt-16 opacity-0"
+      className="flex items-center gap-4 bg-gray-300 p-2 rounded-full w-fit m-auto mt-16 opacity-1"
     >
       <p className="pl-3 text-sm md:text-lg font-semibold text-white">
         {props.text}

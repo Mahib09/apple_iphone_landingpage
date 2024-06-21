@@ -30,10 +30,6 @@ const Features = () => {
       ease: "power2.inOut",
       duration: 1,
     });
-    animateWithGsap("#more", {
-      y: 0,
-      opacity: 1,
-    });
   }, []);
   return (
     <section className="h-full common-padding bg-zinc relative overflow-hidden">

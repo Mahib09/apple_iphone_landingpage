@@ -11,6 +11,11 @@ Version 0.02:
 
 Version 0.03:
 
-- animation custome util made for stroll trigger
+- animation custom util made for stroll trigger
 - feature section added with video using the animation util
 - custom scroll triger action aded to video for restart on rescroll
+
+Version 0.04
+
+- Chip section made with framed video and texts
+- footer started
