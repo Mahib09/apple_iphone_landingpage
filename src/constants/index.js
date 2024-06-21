@@ -1,12 +1,13 @@
 import {
-  blackImg,
-  blueImg,
   highlightFirstVideo,
   highlightFourthVideo,
   highlightSecondVideo,
   highlightThirdVideo,
-  whiteImg,
-  yellowImg,
+  all_colors,
+  natural_titanium,
+  black_titanium,
+  blue_titanium,
+  white_titanium,
 } from "../utils";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
@@ -48,28 +49,38 @@ export const hightlightsSlides = [
 
 export const models = [
   {
+    id: 0,
+    title: "6.1” iPhone 15 Pro in four colors",
+    color: [
+      "linear-gradient(45deg, #b8c6db 25%, #f5f5f5 25%, #f5f5f5 50%, #b8c6db 50%, #b8c6db 75%, #f5f5f5 75%, #f5f5f5 100%)",
+      "#ffe7b9",
+      "#6f6c64",
+    ],
+    img: all_colors,
+  },
+  {
     id: 1,
     title: "iPhone 15 Pro in Natural Titanium",
     color: ["#8F8A81", "#ffe7b9", "#6f6c64"],
-    img: yellowImg,
+    img: natural_titanium,
   },
   {
     id: 2,
     title: "iPhone 15 Pro in Blue Titanium",
     color: ["#53596E", "#6395ff", "#21242e"],
-    img: blueImg,
+    img: blue_titanium,
   },
   {
     id: 3,
     title: "iPhone 15 Pro in White Titanium",
     color: ["#C9C8C2", "#ffffff", "#C9C8C2"],
-    img: whiteImg,
+    img: white_titanium,
   },
   {
     id: 4,
     title: "iPhone 15 Pro in Black Titanium",
     color: ["#454749", "#3b3b3b", "#181819"],
-    img: blackImg,
+    img: black_titanium,
   },
 ];
 

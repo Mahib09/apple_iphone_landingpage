@@ -55,3 +55,14 @@ export const explore1Img = explore1;
 export const explore2Img = explore2;
 export const chipImg = chip;
 export const frameImg = frame;
+
+import allcolors from "/assets/images/all_colors.jpg";
+import naturalcolor from "/assets/images/natural_titanium.jpg";
+import bluecolor from "/assets/images/blue_titanium.jpg";
+import whitecolor from "/assets/images/white_titanium.jpg";
+import blackcolor from "/assets/images/black_titanium.jpg";
+export const all_colors = allcolors;
+export const natural_titanium = naturalcolor;
+export const blue_titanium = bluecolor;
+export const black_titanium = blackcolor;
+export const white_titanium = whitecolor;
