@@ -22,7 +22,7 @@ const Model = () => {
         </h1>
 
         <div className="flex felx-col items-center mt-5">
-          <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+          <div className="w-full h-[75vh] md:h-[75vh] overflow-hidden relative">
             <div className="flex mt-8">
               <img
                 src={model.img}
