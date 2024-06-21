@@ -3,6 +3,7 @@ import { animateWithGsap } from "../utils/animations";
 import { explore1Img, exploreVideo, explore2Img } from "../utils";
 import { useRef } from "react";
 import gsap from "gsap";
+import MoreBtn from "./MoreBtn";
 
 const Features = () => {
   const videoRef = useRef();
@@ -28,6 +29,10 @@ const Features = () => {
       opacity: 1,
       ease: "power2.inOut",
       duration: 1,
+    });
+    animateWithGsap("#more", {
+      y: 0,
+      opacity: 1,
     });
   }, []);
   return (
@@ -100,6 +105,7 @@ const Features = () => {
             </div>
           </div>
         </div>
+        <MoreBtn text="More on design & display" />
       </div>
     </section>
   );
