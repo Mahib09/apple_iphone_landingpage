@@ -16,6 +16,10 @@ const App = () => {
       <Features />
       <HowItWorks />
       <Footer />
+      <div className="bg-zinc text-center">
+        This is solely a learning exercise recreating Apple{"'"}s iPhone 15 Pro
+        landing page. - Mahib
+      </div>
     </main>
   );
 };
