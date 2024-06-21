@@ -40,7 +40,7 @@ const Model = () => {
                     <li
                       key={i}
                       className="w-6 h-6 rounded-full mx-2 cursor-pointer"
-                      style={{ backgroundColor: item.color[0] }}
+                      style={{ background: item.color[0] }}
                       onClick={() => setModel(item)}
                     ></li>
                   ))}

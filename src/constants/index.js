@@ -52,7 +52,7 @@ export const models = [
     id: 0,
     title: "6.1” iPhone 15 Pro in four colors",
     color: [
-      "linear-gradient(45deg, #b8c6db 25%, #f5f5f5 25%, #f5f5f5 50%, #b8c6db 50%, #b8c6db 75%, #f5f5f5 75%, #f5f5f5 100%)",
+      "radial-gradient(circle at center, #ffffff, #e6e6e6 20%, #d4d4d4 40%, #c2c2c2 60%, #a9a9a9 80%, #909090)",
       "#ffe7b9",
       "#6f6c64",
     ],
