@@ -13,3 +13,14 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
     },
   });
 };
+export const animateWithGsapFrom = (target, animationProps, scrollProps) => {
+  gsap.from(target, {
+    ...animationProps,
+    scrollTrigger: {
+      trigger: target,
+      toggleActions: "restart reverse restart reverse",
+      start: "top 75%",
+      ...scrollProps,
+    },
+  });
+};

@@ -111,7 +111,7 @@ canvas {
   }
 
   .hiw-bigtext {
-    @apply text-white text-3xl md:text-5xl font-normal md:font-semibold my-2;
+    @apply text-white text-4xl md:text-5xl font-normal md:font-semibold my-2;
   }
 
   .video-carousel_container {
@@ -120,5 +120,11 @@ canvas {
 
   .g_fadeIn {
     @apply opacity-0 translate-y-[100px];
+  }
+  .main-big-title {
+    @apply text-white text-4xl md:text-7xl font-bold mb-2;
+  }
+  .main-sub-title {
+    @apply text-gray text-xl md:text-4xl font-bold mt-8;
   }
 }

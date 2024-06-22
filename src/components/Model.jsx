@@ -22,15 +22,15 @@ const Model = () => {
         </h1>
 
         <div className="flex felx-col items-center mt-5">
-          <div className="w-full h-[75vh] md:h-[75vh] overflow-hidden relative">
-            <div className="flex mt-8">
+          <div className="w-full h-[90vh] md:h-[95vh] overflow-hidden relative">
+            <div className="flex mt-5 lg:mt-8">
               <img
                 src={model.img}
                 className="m-auto scale-75 lg:scale-100 transition-all ease-in-out"
               ></img>
             </div>
 
-            <div className="mx-auto w-full mt-14">
+            <div className="mx-auto w-full mt-4">
               <p className="text-sm font-light text-center mb-5">
                 {model.title}
               </p>

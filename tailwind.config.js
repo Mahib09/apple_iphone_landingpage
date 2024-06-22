@@ -13,6 +13,10 @@ export default {
         },
         zinc: "#101010",
       },
+      scale: {
+        175: "1.75",
+        200: "2",
+      },
     },
   },
   plugins: [],

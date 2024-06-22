@@ -66,3 +66,6 @@ export const natural_titanium = naturalcolor;
 export const blue_titanium = bluecolor;
 export const black_titanium = blackcolor;
 export const white_titanium = whitecolor;
+
+import greenIguana from "/assets/images/greeniguana.jpg";
+export const greeniguana = greenIguana;
