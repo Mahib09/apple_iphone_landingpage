@@ -1,6 +1,3 @@
-import { useGSAP } from "@gsap/react";
-import { animateWithGsap } from "../utils/animations";
-import gsap from "gsap";
 import { imageCarousel } from "../constants";
 import { CarouselOne } from "../utils";
 import { useRef, useState, useEffect } from "react";
@@ -15,38 +12,18 @@ const ImageCarousel = () => {
     title: "Ultra Wide | Macro",
   });
   const [imageId, setImageId] = useState(1);
-  useGSAP(() => {
-    animateWithGsap("#image", {
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#image",
-        start: "20% bottom",
-        scrub: 1,
-      },
-    });
-  }, []);
+
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth); // Update windowWidth with current innerWidth
+      setWindowWidth(window.innerWidth);
     };
 
-    // Add event listener on mount
     window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Empty dependency array ensures this effect runs only on mount and cleanup
-
-  // Logging windowWidth after every render
-  console.log(windowWidth);
-  // useEffect(() => {
-  //   const translateX = -620 * (imageId - 1); // Adjust based on your image width
-  //   if (carousel.current) {
-  //     carousel.current.style.transform = `translateX(${translateX}px)`;
-  //   }
-  // }, [imageId]);
+  }, []);
   const handlePrevClick = () => {
     if (imageId > 1) {
       setImageId(imageId - 1);
@@ -64,20 +41,17 @@ const ImageCarousel = () => {
   useEffect(() => {
     const scrollToElement = () => {
       if (windowWidth > 1024) {
-        // Adjust scrollLeft value for screens wider than 768px
         carousel.current.scrollTo({
-          left: 600 * (imageId < 3 ? imageId - 1 : imageId),
+          left: 600 * (imageId <= 4 ? imageId - 1 : imageId),
           behavior: "smooth",
         });
       } else if (windowWidth > 768 && windowWidth < 1024) {
-        // Adjust scrollLeft value for screens between 641px and 768px
         carousel.current.scrollTo({
           left:
             470 * (imageId > 2 ? imageId : imageId < 6 ? imageId - 1 : imageId),
           behavior: "smooth",
         });
       } else {
-        // Default scrollLeft value for smaller screens (640px and below)
         carousel.current.scrollTo({
           left:
             230 *
@@ -93,11 +67,10 @@ const ImageCarousel = () => {
   return (
     <section className="common-padding">
       <div className="">
-        {/* <div id="box" className="h-20 w-20 bg-green-400"></div> */}
         <div>
           <div
             id="carousel"
-            className="flex ml-[-170px] gap-4 overflow-auto transition ease-in-out delay-200 snap-x snap-madatory no-scrollbar md:ml-[-350px] lg:ml-[-20px]"
+            className="flex lg:w-screen ml-[-170px] gap-4 overflow-auto transition ease-in-out delay-200 snap-x snap-madatory no-scrollbar md:ml-[-350px] lg:ml-[-20px]"
             ref={carousel}
           >
             {imageCarousel.map((item, i) => (
@@ -107,7 +80,7 @@ const ImageCarousel = () => {
                 src={item.img}
                 alt={item.title}
                 id="image"
-                className={`object-contain h-[250px] w-[285px] md:w-[500px] md:h-[420px] lg:h-[490px] lg:w-[653px] brightness-50 snap-center snap-always ${
+                className={`object-contain h-[250px] w-[285px] md:w-[500px] md:h-[420px] lg:h-[490px] lg:w-[653px] brightness-50 snap-center snap-always scroll-p-0 ${
                   imageId === item.id ? "selected" : ""
                 }`}
               />
