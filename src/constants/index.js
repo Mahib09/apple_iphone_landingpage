@@ -15,6 +15,7 @@ import {
   CarouselFive,
   CarouselSix,
   CarouselSeven,
+  dark,
 } from "../utils";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
@@ -105,6 +106,7 @@ export const footerLinks = [
 ];
 
 export const imageCarousel = [
+  { id: 0, img: dark, white: "0.5x", title: "Ultra Wide | Macro" },
   { id: 1, img: CarouselOne, white: "0.5x", title: "Ultra Wide | Macro" },
   { id: 2, img: CarouselTwo, white: "0.5x ", title: "Ultra Wide | 13mm" },
   { id: 3, img: CarouselThree, white: "1x ", title: "Main | 24mm" },
@@ -112,4 +114,5 @@ export const imageCarousel = [
   { id: 5, img: CarouselFive, white: "1x", title: "Main | 35mm" },
   { id: 6, img: CarouselSix, white: "2x", title: "Telephoto | 48mm" },
   { id: 7, img: CarouselSeven, white: "New 5x", title: "Telephoto | 120 mm" },
+  { id: 8, img: dark, white: "New 5x", title: "Telephoto | 120 mm" },
 ];

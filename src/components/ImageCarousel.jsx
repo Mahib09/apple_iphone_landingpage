@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from "react";
 const ImageCarousel = () => {
   const carousel = useRef();
   const selectedRef = useRef();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [selected, setSelected] = useState({
     id: 1,
     img: CarouselOne,
@@ -15,25 +16,31 @@ const ImageCarousel = () => {
   });
   const [imageId, setImageId] = useState(1);
   useGSAP(() => {
-    animateWithGsap("#title", {
-      y: 0,
-      opacity: 1,
-      ease: "power2.inOut",
+    animateWithGsap("#image", {
       duration: 1,
-    });
-    gsap.to("#box", {
-      x: 20,
       scrollTrigger: {
-        trigger: "#box",
-        toggleActions: "restart reverse restart reverse",
-        start: "top 85%",
+        trigger: "#image",
+        start: "20% bottom",
+        scrub: 1,
       },
-      scale: 1.5,
-      duration: 1,
-      ease: "power1.inOut",
     });
   }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth); // Update windowWidth with current innerWidth
+    };
 
+    // Add event listener on mount
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty dependency array ensures this effect runs only on mount and cleanup
+
+  // Logging windowWidth after every render
+  console.log(windowWidth);
   // useEffect(() => {
   //   const translateX = -620 * (imageId - 1); // Adjust based on your image width
   //   if (carousel.current) {
@@ -56,13 +63,32 @@ const ImageCarousel = () => {
   };
   useEffect(() => {
     const scrollToElement = () => {
-      carousel.current.scrollTo({
-        left: 600 * (imageId - 1), // Adjust this value based on the width of each image
-        behavior: "smooth",
-      });
+      if (windowWidth > 1024) {
+        // Adjust scrollLeft value for screens wider than 768px
+        carousel.current.scrollTo({
+          left: 600 * (imageId < 3 ? imageId - 1 : imageId),
+          behavior: "smooth",
+        });
+      } else if (windowWidth > 768 && windowWidth < 1024) {
+        // Adjust scrollLeft value for screens between 641px and 768px
+        carousel.current.scrollTo({
+          left:
+            470 * (imageId > 2 ? imageId : imageId < 6 ? imageId - 1 : imageId),
+          behavior: "smooth",
+        });
+      } else {
+        // Default scrollLeft value for smaller screens (640px and below)
+        carousel.current.scrollTo({
+          left:
+            230 *
+            (imageId < 3 ? imageId - 1 : imageId > 5 ? imageId + 1 : imageId),
+          behavior: "smooth",
+        });
+      }
     };
+
     scrollToElement();
-  }, [imageId]);
+  }, [imageId, windowWidth]);
 
   return (
     <section className="common-padding">
@@ -71,7 +97,7 @@ const ImageCarousel = () => {
         <div>
           <div
             id="carousel"
-            className="flex gap-4 overflow-auto transition ease-in-out delay-200 snap-x"
+            className="flex ml-[-170px] gap-4 overflow-auto transition ease-in-out delay-200 snap-x snap-madatory no-scrollbar md:ml-[-350px] lg:ml-[-20px]"
             ref={carousel}
           >
             {imageCarousel.map((item, i) => (
@@ -81,23 +107,24 @@ const ImageCarousel = () => {
                 src={item.img}
                 alt={item.title}
                 id="image"
-                className={`object-contain h-[365px] w-[274px] md:h-[490px] md:w-[653px] brightness-50  ${
+                className={`object-contain h-[250px] w-[285px] md:w-[500px] md:h-[420px] lg:h-[490px] lg:w-[653px] brightness-50 snap-center snap-always ${
                   imageId === item.id ? "selected" : ""
                 }`}
               />
             ))}
           </div>
-          <div>
-            <p>
+          <div className="flex flex-col">
+            <p className="m-auto">
               <span>{selected.white}</span>
               {selected.title}
             </p>
-            <div className="flex gap-5">
+            <div className="flex gap-5 ml-auto">
               <button onClick={handlePrevClick}>prev</button>
               <button onClick={handleNextClick}>next</button>
             </div>
           </div>
         </div>
+        <div className="h-screen"></div>
       </div>
     </section>
   );

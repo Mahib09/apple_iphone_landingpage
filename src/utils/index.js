@@ -84,3 +84,5 @@ export const CarouselFour = Carousel_Four;
 export const CarouselFive = Carousel_Five;
 export const CarouselSix = Carousel_Six;
 export const CarouselSeven = Carousel_Seven;
+import dark_pic from "/assets/images/dark.png";
+export const dark = dark_pic;
