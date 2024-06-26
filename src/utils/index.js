@@ -69,3 +69,18 @@ export const white_titanium = whitecolor;
 
 import greenIguana from "/assets/images/greeniguana.jpg";
 export const greeniguana = greenIguana;
+
+import Carousel_One from "/assets/images/CarouselOne.jpg";
+import Carousel_Two from "/assets/images/CarouselTwo.jpg";
+import Carousel_Three from "/assets/images/CarouselThree.jpg";
+import Carousel_Four from "/assets/images/CarouselFour.jpg";
+import Carousel_Five from "/assets/images/CarouselFive.jpg";
+import Carousel_Six from "/assets/images/CarouselSix.jpg";
+import Carousel_Seven from "/assets/images/CarouselSeven.jpg";
+export const CarouselOne = Carousel_One;
+export const CarouselTwo = Carousel_Two;
+export const CarouselThree = Carousel_Three;
+export const CarouselFour = Carousel_Four;
+export const CarouselFive = Carousel_Five;
+export const CarouselSix = Carousel_Six;
+export const CarouselSeven = Carousel_Seven;

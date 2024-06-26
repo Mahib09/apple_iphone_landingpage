@@ -125,6 +125,9 @@ canvas {
     @apply text-white text-4xl md:text-7xl font-bold mb-2;
   }
   .main-sub-title {
-    @apply text-gray text-xl md:text-4xl font-bold mt-8;
+    @apply text-gray text-xl md:text-2xl font-semibold mt-8;
+  }
+  .selected {
+    @apply brightness-100 !important;
   }
 }

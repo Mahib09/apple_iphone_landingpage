@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { greeniguana } from "../utils";
-import { animateWithGsap, animateWithGsapFrom } from "../utils/animations";
+import { animateWithGsap } from "../utils/animations";
 
 const Camera = () => {
   useGSAP(() => {
@@ -40,6 +40,9 @@ const Camera = () => {
         src={greeniguana}
         className="ml-[250px] md:ml-[30px] lg:ml-[50px] scale-175 md:scale-100 lg:scale-90"
       />
+      <p className="text-gray font-semibold screen-max-width">
+        A green iguana, captured by the 48MP Main camera{" "}
+      </p>
     </section>
   );
 };

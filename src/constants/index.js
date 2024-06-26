@@ -8,6 +8,13 @@ import {
   black_titanium,
   blue_titanium,
   white_titanium,
+  CarouselOne,
+  CarouselTwo,
+  CarouselThree,
+  CarouselFour,
+  CarouselFive,
+  CarouselSix,
+  CarouselSeven,
 } from "../utils";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
@@ -95,4 +102,14 @@ export const footerLinks = [
   "Sales Policy",
   "Legal",
   "Site Map",
+];
+
+export const imageCarousel = [
+  { id: 1, img: CarouselOne, white: "0.5x", title: "Ultra Wide | Macro" },
+  { id: 2, img: CarouselTwo, white: "0.5x ", title: "Ultra Wide | 13mm" },
+  { id: 3, img: CarouselThree, white: "1x ", title: "Main | 24mm" },
+  { id: 4, img: CarouselFour, white: "1x ", title: "Main | 28mm" },
+  { id: 5, img: CarouselFive, white: "1x", title: "Main | 35mm" },
+  { id: 6, img: CarouselSix, white: "2x", title: "Telephoto | 48mm" },
+  { id: 7, img: CarouselSeven, white: "New 5x", title: "Telephoto | 120 mm" },
 ];
