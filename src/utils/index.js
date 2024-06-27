@@ -86,3 +86,9 @@ export const CarouselSix = Carousel_Six;
 export const CarouselSeven = Carousel_Seven;
 import dark_pic from "/assets/images/dark.png";
 export const dark = dark_pic;
+
+import main_camera from "/assets/images/maincamera.jpg";
+export const maincamera = main_camera;
+
+import telephoto_mv from "/assets/videos/telephotodisplay.mp4";
+export const telephotodisplay = telephoto_mv;

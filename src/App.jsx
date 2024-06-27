@@ -7,6 +7,9 @@ import HowItWorks from "./components/HowItWorks";
 import Footer from "./components/Footer";
 import Camera from "./components/Camera";
 import ImageCarousel from "./components/ImageCarousel";
+import RestCamera from "./components/RestCamera";
+import Telephoto from "./components/Telephoto";
+import ActionBtn from "./components/ActionBtn";
 
 const App = () => {
   return (
@@ -19,6 +22,9 @@ const App = () => {
       <HowItWorks />
       <Camera />
       <ImageCarousel />
+      <RestCamera />
+      <Telephoto />
+      <ActionBtn />
       <Footer />
       <div className="bg-zinc text-center">
         This is solely a learning exercise that I did recreating Apple{"'"}s

@@ -19,7 +19,7 @@ const Camera = () => {
     // });
   });
   return (
-    <section className="common-padding overflow-hidden">
+    <section className="common-padding overflow-hidden mt-[-70px]">
       <div className="screen-max-width">
         <div
           id="mainTitle"
