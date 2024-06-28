@@ -33,8 +33,8 @@ const Telephoto = () => {
               <source src={telephotodisplay} type="video/mp4"></source>
             </video>
           </div>
-          <div className="flex flex-col md:flex-row m-auto mt-[-50px] lg:mt-10 md:w-[692px] md:h-[340px] lg:w-[980px] lg:h-[307px]">
-            <div className="flex flex-col m-auto mt-0 ">
+          <div className="flex flex-col md:flex-row m-auto mt-[-150px] md:mt-[-50px] lg:mt-10 md:w-[692px] md:h-[340px] lg:w-[980px] lg:h-[307px]">
+            <div className="flex flex-col gap-4 lg:gap-0 m-auto mt-0 ">
               <p className="tel_fadeIn reg-sub-title w-[280px] h-[135px] md:w-[290px] md:h-[175px] lg:w-[375px] lg:h-[145px]">
                 For iPhone 15 Pro Max, we designed a 5x Telephoto camera with{" "}
                 <span>the longest optical zoom of any iPhone ever</span> to fit

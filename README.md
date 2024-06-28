@@ -19,3 +19,13 @@ Version 0.04
 
 - Chip section made with framed video and texts
 - footer started
+
+Version 0.05
+
+- Action Button showcase page made
+- action buttons utils and constants added
+- action buttons images added
+- action button component made
+- action buttons icons imported
+- action button responsive carousel made
+- animation added on the action showcase component

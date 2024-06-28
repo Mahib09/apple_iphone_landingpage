@@ -92,3 +92,23 @@ export const maincamera = main_camera;
 
 import telephoto_mv from "/assets/videos/telephotodisplay.mp4";
 export const telephotodisplay = telephoto_mv;
+
+import ac_accessibility from "/assets/images/actionaccessibility.png";
+import ac_camera from "/assets/images/actioncamera.png";
+import ac_flashlight from "/assets/images/actionflashlight.png";
+import ac_focus from "/assets/images/actionfocus.png";
+import ac_magnifier from "/assets/images/actionmagnifier.png";
+import ac_shortcut from "/assets/images/actionshortcut.png";
+import ac_silent from "/assets/images/actionsilent.png";
+import ac_translate from "/assets/images/actiontranslate.png";
+import ac_voicememo from "/assets/images/actionvoicememo.png";
+
+export const actionaccessibility = ac_accessibility;
+export const actioncamera = ac_camera;
+export const actionflashlight = ac_flashlight;
+export const actionfocus = ac_focus;
+export const actionmagnifier = ac_magnifier;
+export const actionshortcut = ac_shortcut;
+export const actionsilent = ac_silent;
+export const actiontranslate = ac_translate;
+export const actionvoicememo = ac_voicememo;

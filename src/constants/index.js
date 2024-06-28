@@ -16,7 +16,27 @@ import {
   CarouselSix,
   CarouselSeven,
   dark,
+  actionaccessibility,
+  actioncamera,
+  actionflashlight,
+  actionfocus,
+  actionmagnifier,
+  actionshortcut,
+  actionsilent,
+  actiontranslate,
+  actionvoicememo,
 } from "../utils";
+import {
+  BellOff,
+  Camera,
+  Flashlight,
+  Moon,
+  AudioLines,
+  Languages,
+  ZoomIn,
+  Layers2,
+  PersonStanding,
+} from "lucide-react";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
 
@@ -115,4 +135,21 @@ export const imageCarousel = [
   { id: 6, img: CarouselSix, white: "2x", title: "Telephoto | 48mm" },
   { id: 7, img: CarouselSeven, white: "New 5x", title: "Telephoto | 120 mm" },
   { id: 8, img: dark, white: "New 5x", title: "Telephoto | 120 mm" },
+];
+
+export const actionButtons = [
+  { id: 1, icon: BellOff, text: "Silent mode", img: actionsilent },
+  { id: 2, icon: Moon, text: "Focus", img: actionfocus },
+  { id: 3, icon: Camera, text: "Camera", img: actioncamera },
+  { id: 4, icon: Flashlight, text: "Flashlight", img: actionflashlight },
+  { id: 5, icon: AudioLines, text: "Voice Memo", img: actionvoicememo },
+  { id: 6, icon: Languages, text: "Translate", img: actiontranslate },
+  { id: 7, icon: ZoomIn, text: "Magnifier", img: actionmagnifier },
+  { id: 8, icon: Layers2, text: "Shortcut", img: actionshortcut },
+  {
+    id: 9,
+    icon: PersonStanding,
+    text: "Accessibility",
+    img: actionaccessibility,
+  },
 ];

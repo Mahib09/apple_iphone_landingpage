@@ -125,13 +125,13 @@ const ImageCarousel = () => {
           <div className="flex gap-5 ml-auto mr-20">
             <button
               onClick={handlePrevClick}
-              className="bg-gray-500 flex items-center rounded-full h-[36px] w-[36px] p-[4px]"
+              className="bg-[#212121] flex items-center rounded-full h-[36px] w-[36px] p-[4px]"
             >
               <ChevronLeft size={36} />
             </button>
             <button
               onClick={handleNextClick}
-              className="bg-gray-500 flex items-center rounded-full h-[36px] w-[36px] p-[4px]"
+              className="bg-[#212121] flex items-center rounded-full h-[36px] w-[36px] p-[4px]"
             >
               <ChevronRight size={36} />
             </button>
