@@ -5,7 +5,7 @@ const Footer = () => {
         <p className="text-gray text-4xl lg:6xl font-semibold mb-[50px]">
           iPhone
         </p>
-        <div className="flex gap-16 flex-col md:flex-row">
+        <div className="flex gap-16 flex-wrap md:flex-row">
           <ul className="text-lg font-semibold md:text-xl flex flex-col gap-2 cursor-pointer">
             <li className="text-sm text-gray md:text-md mb-6">
               Explore iPhone
