@@ -24,6 +24,16 @@ const HowItWorks = () => {
       ease: "power2.inOut",
       duration: 1,
     });
+    gsap.to("#honkaiVid", {
+      scrollTrigger: {
+        trigger: "#honkaiVid",
+        toggleActions: "play pause reverse restart",
+        start: "-10% bottom",
+      },
+      onComplete: () => {
+        videoRef.current.play();
+      },
+    });
   }, []);
   return (
     <section className="common-padding">
@@ -51,6 +61,7 @@ const HowItWorks = () => {
             </div>
             <div className="hiw-video">
               <video
+                id="honkaiVid"
                 className="pointer-events-none"
                 playsInline
                 preload="none"

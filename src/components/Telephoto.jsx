@@ -2,13 +2,27 @@ import { useGSAP } from "@gsap/react";
 import { telephotodisplay } from "../utils";
 import MoreBtn from "./MoreBtn";
 import { animateWithGsap } from "../utils/animations";
+import gsap from "gsap";
+import { useRef } from "react";
+
 const Telephoto = () => {
+  const videoRef = useRef();
   useGSAP(() => {
     animateWithGsap(".tel_fadeIn", {
       y: 0,
       opacity: 1,
       ease: "power2.inOut",
       duration: 1,
+    });
+    gsap.to("#teleVid", {
+      scrollTrigger: {
+        trigger: "#teleVid",
+        toggleActions: "play pause reverse restart",
+        start: "-10% bottom",
+      },
+      onComplete: () => {
+        videoRef.current.play();
+      },
     });
     animateWithGsap;
   }, []);
@@ -23,11 +37,12 @@ const Telephoto = () => {
           </div>
           <div className="flex flex-col m-auto mt-[-50px] lg:mt-10">
             <video
-              id="vid"
+              id="teleVid"
               autoPlay
               muted
               playsInline={true}
               key={telephotodisplay}
+              ref={videoRef}
               className="pointer-events-none h-[666px] w-[734px] lg:w-[1050px] lg:h-[590px]"
             >
               <source src={telephotodisplay} type="video/mp4"></source>
