@@ -112,3 +112,6 @@ export const actionshortcut = ac_shortcut;
 export const actionsilent = ac_silent;
 export const actiontranslate = ac_translate;
 export const actionvoicememo = ac_voicememo;
+
+import connectivity from "/assets/images/macToIphone.jpg";
+export const macToIphone = connectivity;

@@ -16,7 +16,7 @@ const RestCamera = () => {
     });
   }, []);
   return (
-    <section className="common-padding mt-[-100px]">
+    <section className="common-padding mt-[-100px] overflow-hidden">
       <div className="screen-max-width">
         <div className="flex flex-col md:flex-row items-center m-auto w-[560px] md:w-[692px] lg:[980px]">
           <div className="m-auto">
@@ -41,7 +41,6 @@ const RestCamera = () => {
             </p>
           </div>
         </div>
-        <hr className="mt-20 w-[560px] md:w-[692px] lg:[980px] m-auto "></hr>
         <MoreBtn text="Zoom in on the cameras" />
       </div>
     </section>
