@@ -16,9 +16,9 @@ const RestCamera = () => {
     });
   }, []);
   return (
-    <section className="common-padding mt-[-100px] overflow-hidden">
-      <div className="screen-max-width">
-        <div className="flex flex-col md:flex-row items-center m-auto w-[560px] md:w-[692px] lg:[980px]">
+    <section className="common-padding mt-[-100px]">
+      <div className="screen-max-width flex flex-col items-center">
+        <div className="flex flex-col overflow-hidden md:flex-row items-center w-[560px] md:w-[692px] lg:[980px]">
           <div className="m-auto">
             <img
               src={maincamera}
